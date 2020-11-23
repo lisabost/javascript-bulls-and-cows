@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulls and Cows</title>
+    <!--Bootstrap Styles Go Here-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--My Styles Go Here-->
+    <link rel="stylesheet" href="bulls.css">
+    <!--My favicon goes here-->
+    <link rel="icon" href="bull.png" type="image/gif" sizes="32x32">
+</head>
+<body>
+<div class="container">
+    <h1>Bulls and Cows</h1>
+    <button class="btn btn-info" id="showRules">How To Play</button>
+    <button class="btn btn-danger" id="reveal">Reveal Answer</button>
+
+    <form>
+        <div>
+            <div id="rules"><p>The goal is to guess the 4 digit secret number in which a number (1-9) can only be represented one time.<br>
+                If a number is correct but not in the right position, a cow is revealed.<br>
+                When the number is correct and in the right place, a bull is revealed.<br>
+                All four numbers must be in the correct spots to win.</p>
+            </div>
+            <div id="error">Each digit should be unique</div>
+            <div id="numGuessed"></div>
+            <div id="cheat"></div>
+        </div>
+
+        <div class="form-controls">
+        <label for="guess"></label>
+        <input type="text" id="guess" name="guess" maxlength="4">
+        </div>
+
+        <input type="submit" class="btn btn-primary" id="guessButton" value="Make a Guess!" maxlength="4">
+
+        <div id="pastGuesses">
+            <ul></ul>
+        </div>
+    </form>
+    <input type="submit" class="btn btn-primary" id="newGameButton" value="New Game">
+</div>
+</body>
+
+<!--JQuery Goes Here-->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!--JQuery Validation Goes Here-->
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+<!--Popper and Bootstrap JavaScript-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--My JavaScript Goes Here-->
+<script src="bulls.js"></script>
+
+</html>

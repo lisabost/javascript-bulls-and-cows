@@ -1,0 +1,62 @@
+#error {
+    display: none;
+    color: red;
+    font-weight: bold;
+}
+
+body {
+    text-align: center;
+    background-image: linear-gradient(to bottom right, rgba(255, 153, 0, 0.5), rgba(255, 102, 0, 0.8));
+    background-repeat: no-repeat;
+    background-size: cover!important;
+    height: 100vh;
+    width: 100vw;
+}
+li {
+    list-style-type: none;
+    font-size: 2em;
+}
+h1 {
+    font-size: 4.5em;
+}
+button {
+    margin: 10px;
+}
+
+#results {
+    height: 250px;
+    width: 100%;
+}
+input[type=text] {
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+    outline: 0;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    font-size: 3em;
+    background-color: transparent;
+}
+#cheat {
+    font-size: 2em;
+    color: red;
+}
+label.error {
+    color: red;
+}
+
+#numGuessed {
+    font-size: 4em;
+}
+
+#rules {
+    display: none;
+}
+
+#cheat {
+    display: none;
+}
+#newGameButton {
+    display: none;
+}
