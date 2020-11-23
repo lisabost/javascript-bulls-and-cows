@@ -111,8 +111,10 @@ $(document).ready(function () {
             var cow = "🐄";
             var bull = "🐂";
 
-            //make sure the player did not enter the same number more than 1 time
-            if (guess1 === guess2 || guess1 === guess3 || guess1 === guess4) {
+            //make sure the player did not enter the same number more than 1 time or enter a 0
+            if(guess1 === 0 || guess2 === 0 || guess3 === 0 || guess4 === 0) {
+                $("#zeroError").show();
+            } else if (guess1 === guess2 || guess1 === guess3 || guess1 === guess4) {
                 $("#error").show();
             } else if (guess2 === guess3 || guess2 === guess4) {
                 $("#error").show();
@@ -120,6 +122,7 @@ $(document).ready(function () {
                 $("#error").show();
             } else {
                 $("#error").hide();
+                $("#zeroError").hide();
                 //compare guesses with computer's numbers and display results
                 if (guess1 === num1) {
                     //display bull
