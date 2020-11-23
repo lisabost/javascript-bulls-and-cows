@@ -77,15 +77,13 @@ $(document).ready(function () {
             var revealNumber = "" + num1 + "" + num2 + "" + num3 + "" + num4;
             $("#cheat").text(`You cheated! The answer was ${revealNumber}`);
 
-            //if the guess box and guess submission buttons are toggled off, turn them back on
-            $("#guess:hidden").toggle();
-            $("#guessButton:hidden").toggle();
+            $("#guess").show();
+            $("#guessButton").show();
+            $("#newGameButton").hide();
+            $("#cheat").hide();
 
             //reset text box
             $("input:text").val("");
-
-            //hide the new game button if it is visible
-            $("#newGameButton:visible").toggle();
 
             //reset the num guessed div to contain an empty string
             $("#numGuessed").text("");
@@ -123,6 +121,7 @@ $(document).ready(function () {
             } else {
                 $("#error").hide();
                 $("#zeroError").hide();
+
                 //compare guesses with computer's numbers and display results
                 if (guess1 === num1) {
                     //display bull
@@ -130,8 +129,6 @@ $(document).ready(function () {
                 } else if (guess1 === num2 || guess1 === num3 || guess1 === num4) {
                     //display cow, cows go first
                     guessResult = cow + guessResult;
-                } else {
-                    guessResult += "";
                 }
 
                 if (guess2 === num2) {
@@ -140,9 +137,6 @@ $(document).ready(function () {
                 } else if (guess2 === num1 || guess2 === num3 || guess2 === num4) {
                     //display cow, cows go first
                     guessResult = cow + guessResult;
-                } else {
-                    //display no numbers match
-                    guessResult += "";
                 }
 
                 if (guess3 === num3) {
@@ -151,9 +145,6 @@ $(document).ready(function () {
                 } else if (guess3 === num1 || guess3 === num2 || guess3 === num4) {
                     //display cow, cows go first
                     guessResult = cow + guessResult;
-                } else {
-                    //display no numbers match
-                    guessResult += "";
                 }
 
                 if (guess4 === num4) {
@@ -162,9 +153,6 @@ $(document).ready(function () {
                 } else if (guess4 === num1 || guess4 === num2 || guess4 === num3) {
                     //display cow, cows go first
                     guessResult = cow + guessResult;
-                } else {
-                    //display no numbers match
-                    guessResult += "";
                 }
 
                 //put guess results in div with id of results
