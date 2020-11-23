@@ -125,8 +125,8 @@ $(document).ready(function () {
                     //display bull
                     guessResult += bull;
                 } else if (guess1 === num2 || guess1 === num3 || guess1 === num4) {
-                    //display cow
-                    guessResult += cow;
+                    //display cow, cows go first
+                    guessResult = cow + guessResult;
                 } else {
                     guessResult += "";
                 }
@@ -135,8 +135,8 @@ $(document).ready(function () {
                     //display bull
                     guessResult += bull;
                 } else if (guess2 === num1 || guess2 === num3 || guess2 === num4) {
-                    //display cow
-                    guessResult += cow;
+                    //display cow, cows go first
+                    guessResult = cow + guessResult;
                 } else {
                     //display no numbers match
                     guessResult += "";
@@ -146,8 +146,8 @@ $(document).ready(function () {
                     //display bull
                     guessResult += bull;
                 } else if (guess3 === num1 || guess3 === num2 || guess3 === num4) {
-                    //display cow
-                    guessResult += cow;
+                    //display cow, cows go first
+                    guessResult = cow + guessResult;
                 } else {
                     //display no numbers match
                     guessResult += "";
@@ -157,8 +157,8 @@ $(document).ready(function () {
                     //display bull
                     guessResult += bull;
                 } else if (guess4 === num1 || guess4 === num2 || guess4 === num3) {
-                    //display cow
-                    guessResult += cow;
+                    //display cow, cows go first
+                    guessResult = cow + guessResult;
                 } else {
                     //display no numbers match
                     guessResult += "";
