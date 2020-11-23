@@ -1,5 +1,4 @@
-#error, #zeroError {
-    display: none;
+#error {
     color: red;
     font-weight: bold;
     font-size: 3em;

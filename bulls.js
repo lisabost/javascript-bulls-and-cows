@@ -105,22 +105,25 @@ $(document).ready(function () {
             var guess4 = parseInt(guess.charAt(3));
 
             var guessResult = "";
-            var pastGuess = guess;
             var cow = "🐄";
             var bull = "🐂";
 
             //make sure the player did not enter the same number more than 1 time or enter a 0
             if(guess1 === 0 || guess2 === 0 || guess3 === 0 || guess4 === 0) {
-                $("#zeroError").show();
+                $("#error").text(`${guess} is not a valid guess`);
+                $("#numGuessed").text("");
             } else if (guess1 === guess2 || guess1 === guess3 || guess1 === guess4) {
-                $("#error").show();
+                $("#error").text(`${guess} is not a valid guess`);
+                $("#numGuessed").text("");
             } else if (guess2 === guess3 || guess2 === guess4) {
-                $("#error").show();
+                $("#error").text(`${guess} is not a valid guess`);
+                $("#numGuessed").text("");
             } else if (guess3 === guess4) {
-                $("#error").show();
+                $("#error").text(`${guess} is not a valid guess`);
+                $("#numGuessed").text("");
             } else {
-                $("#error").hide();
-                $("#zeroError").hide();
+                $("#error").text("");
+                $("#zeroError").text("");
 
                 //compare guesses with computer's numbers and display results
                 if (guess1 === num1) {
@@ -162,14 +165,14 @@ $(document).ready(function () {
                 } else {
                     $("#numGuessed").text(`${guessResult}`);
                 }
-                var displayText = (`${pastGuess} - ${guessResult}`);
+                var displayText = (`${guess} - ${guessResult}`);
 
                 //put guess and results in unordered list in div with id pastGuesses
                 $("#pastGuesses ul").append($("<li>").text(displayText));
 
                 if (guessResult === "🐂🐂🐂🐂") {
                     //game over, keep showing their guess and display victory message
-                    $("#numGuessed").text(`You guessed it! The number was ${pastGuess}`)
+                    $("#numGuessed").text(`You guessed it! The number was ${guess}`)
                     //reset the text box
                     $("input:text").val("");
                     //turn off the ability to keep guessing
